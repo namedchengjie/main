@@ -7,22 +7,48 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { --navy: #002349; --gold: #c5a059; --off-white: #fcfcfc; }
+        :root { 
+            --navy: #002349; 
+            --gold: #c5a059; /* 恢复经典的香槟金 */
+            --off-white: #fcfcfc; 
+        }
         body { background-color: var(--off-white); font-family: 'Noto Sans SC', sans-serif; color: var(--navy); overflow-x: hidden; }
         .serif { font-family: 'Playfair Display', serif; }
         .wave-container { position: fixed; bottom: 0; left: 0; width: 100%; height: 12vh; background: rgba(0, 35, 73, 0.03); z-index: -1; }
+        
+        /* 链接卡片基础样式 */
         .nav-card { transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid rgba(0, 35, 73, 0.08); position: relative; overflow: hidden; }
-        .nav-card.active:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 15px 30px rgba(0, 35, 73, 0.06); }
-        .nav-card.active::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: var(--gold); transition: all 0.4s ease; transform: translateX(-50%); }
+        
+        /* 悬停效果：恢复金色边框与阴影 */
+        .nav-card.active:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--gold); 
+            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.15); 
+        }
+        
+        /* 底部金色进度条效果 */
+        .nav-card.active::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: 0; 
+            left: 50%; 
+            width: 0; 
+            height: 2px; 
+            background: var(--gold); 
+            transition: all 0.4s ease; 
+            transform: translateX(-50%); 
+        }
         .nav-card.active:hover::after { width: 100%; }
+        
         .nav-card.disabled { opacity: 0.5; cursor: not-allowed; background-color: rgba(240, 240, 240, 0.5); }
         .anchor-icon { transition: transform 0.5s ease; }
-        .nav-card.active:hover .anchor-icon { transform: scale(1.1) rotate(5deg); }
+        .nav-card.active:hover .anchor-icon { transform: scale(1.1) rotate(5deg); color: var(--gold); }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <nav class="w-full py-6 px-8 flex justify-between items-center border-b border-gray-100">
+    <!-- 顶部导航 -->
+    <nav class="w-full py-6 px-8 flex justify-between items-center border-b border-gray-100 bg-white">
         <div class="flex items-center space-x-3 text-[#002349]">
             <!-- 航海日志书本图标 -->
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -33,10 +59,13 @@
         </div>
     </nav>
 
+    <!-- 主体内容 -->
     <main class="flex-grow container mx-auto px-6 py-12 flex flex-col items-center">
         <div class="text-center mb-16">
-            <h1 class="serif text-4xl md:text-5xl font-light mb-4 tracking-tight">归航 <span class="italic text-[#c5a059]">Station</span></h1>
-            <div class="w-12 h-[1px] bg-[#002349] mx-auto opacity-20 mb-4"></div>
+            <h1 class="serif text-4xl md:text-5xl font-light mb-4 tracking-tight text-[#002349]">
+                归航 <span class="italic text-[#c5a059]">Station</span>
+            </h1>
+            <div class="w-12 h-[1px] bg-[#c5a059] mx-auto opacity-60 mb-4"></div>
             <p class="text-gray-400 font-light tracking-[0.2em] text-[10px] uppercase">Digital Navigation Registry</p>
         </div>
 
@@ -46,10 +75,12 @@
         </div>
     </main>
 
-    <footer class="w-full py-8 text-center border-t border-gray-50 mt-12">
-        <p class="text-[9px] tracking-[0.4em] text-gray-300 uppercase">Designed for Exploration / © 2024 海军风简约门户</p>
+    <!-- 页脚 -->
+    <footer class="w-full py-8 text-center border-t border-gray-50 mt-12 bg-white">
+        <p class="text-[9px] tracking-[0.4em] text-gray-400 uppercase">Designed for Exploration / © 2024 海军风简约门户</p>
     </footer>
 
+    <!-- 装饰性波浪 -->
     <div class="wave-container">
         <svg class="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
             <path fill="#002349" fill-opacity="0.04" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -63,7 +94,6 @@
                 subtitle: "电脑版", 
                 url: "https://namedchengjie.github.io/f1/", 
                 active: true,
-                // 座位/布局图标
                 icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />`
             },
             { 
@@ -71,10 +101,16 @@
                 subtitle: "小写字母", 
                 url: "https://namedchengjie.github.io/f2/", 
                 active: true,
-                // 键盘/输入图标
                 icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />`
             },
-            { title: "开发中", subtitle: "Pending", active: false },
+            { 
+                title: "家庭座位分配", 
+                subtitle: "4位大成员", 
+                url: "https://namedchengjie.github.io/f3/", 
+                active: true,
+                icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />`
+            },
+            // 剩下的链接自动生成
             { title: "开发中", subtitle: "Pending", active: false },
             { title: "开发中", subtitle: "Pending", active: false },
             { title: "开发中", subtitle: "Pending", active: false },
