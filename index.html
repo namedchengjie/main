@@ -16,6 +16,7 @@
             --nt-navy: #001F3F;
             --nt-orange: #FF5722;
             --nt-pink: #FF69B4;
+            --nt-lightgreen: #8BC34A;
             --nt-gray-dark: #323232;
             --nt-gray-light: #EFEFEF;
             --nt-white: #FFFFFF;
@@ -99,6 +100,7 @@
         .tab-navy { background-color: var(--nt-navy); }
         .tab-orange { background-color: var(--nt-orange); }
         .tab-pink { background-color: var(--nt-pink); }
+        .tab-lightgreen { background-color: var(--nt-lightgreen); }
 
         .icon-box {
             width: 60px;
@@ -219,18 +221,29 @@
             <a href="https://namedchengjie.github.io/f7" target="_blank" class="game-card">
                 <div class="color-tab tab-pink"></div>
                 <div class="icon-box bg-pink-50">
-                    <!-- 扑克牌造型图标 -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-600" viewBox="0 0 24 24" fill="currentColor">
-                        <!-- 第一张牌 -->
                         <rect x="3" y="5" width="12" height="16" rx="1.5" fill="white" stroke="currentColor" stroke-width="1.5"/>
-                        <!-- 第二张牌 (交叠) -->
                         <rect x="8" y="3" width="12" height="16" rx="1.5" fill="white" stroke="currentColor" stroke-width="1.5"/>
-                        <!-- 红桃心 -->
                         <path d="M14 9.5c0-.8-.6-1.5-1.5-1.5s-1.5.7-1.5 1.5c0 1.5 3 3.5 3 3.5s3-2 3-3.5c0-.8-.6-1.5-1.5-1.5S14 8.7 14 9.5z" fill="#E60012"/>
                     </svg>
                 </div>
                 <h2 class="text-lg font-black mb-1">24 点扑克牌</h2>
                 <span class="text-xs font-bold text-gray-400">双人计算</span>
+            </a>
+
+            <!-- 链接 9 -->
+            <a href="https://namedchengjie.github.io/fork2048/" target="_blank" class="game-card">
+                <div class="color-tab tab-lightgreen"></div>
+                <div class="icon-box bg-lime-50">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-lime-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <rect x="4" y="4" width="7" height="7" rx="1" stroke-width="2"/>
+                        <rect x="13" y="4" width="7" height="7" rx="1" stroke-width="2"/>
+                        <rect x="4" y="13" width="7" height="7" rx="1" stroke-width="2"/>
+                        <rect x="13" y="13" width="7" height="7" rx="1" stroke-width="2" fill="currentColor" fill-opacity="0.2"/>
+                    </svg>
+                </div>
+                <h2 class="text-lg font-black mb-1">2048游戏</h2>
+                <span class="text-xs font-bold text-gray-400">fork</span>
             </a>
 
         </div>
