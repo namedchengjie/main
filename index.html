@@ -16,10 +16,10 @@
             --nt-navy: #001F3F;
             --nt-orange: #FF5722;
             --nt-pink: #FF69B4;
-            --nt-lightgreen: #8BC34A;
             --nt-gray-dark: #323232;
             --nt-gray-light: #EFEFEF;
             --nt-white: #FFFFFF;
+            --fork-bg: #1A1A1A;
         }
 
         body {
@@ -31,14 +31,12 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* 顶部红色条 */
         .top-accent {
             background-color: var(--nt-red);
             height: 8px;
             width: 100%;
         }
 
-        /* 背景点状纹理 */
         .bg-pattern {
             position: fixed;
             top: 0;
@@ -51,7 +49,7 @@
             background-size: 30px 30px;
         }
 
-        /* 游戏卡带风格 */
+        /* 原有游戏卡带风格 */
         .game-card {
             background: var(--nt-white);
             border: 4px solid var(--nt-gray-dark);
@@ -67,7 +65,6 @@
             box-shadow: 0 6px 0 var(--nt-gray-dark);
             text-decoration: none;
             color: inherit;
-            touch-action: manipulation;
         }
 
         @media (hover: hover) {
@@ -80,6 +77,40 @@
         .game-card:active {
             transform: translateY(2px);
             box-shadow: 0 2px 0 var(--nt-gray-dark);
+        }
+
+        /* Fork 专用风格：深色、极简、科技感 */
+        .fork-card {
+            background: var(--fork-bg);
+            border: 2px solid #444;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            padding: 1.25rem;
+            text-decoration: none;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fork-card::before {
+            content: 'FORKED';
+            position: absolute;
+            top: 5px;
+            right: -20px;
+            background: #ffde00;
+            color: black;
+            font-size: 10px;
+            font-weight: 900;
+            padding: 2px 25px;
+            transform: rotate(45deg);
+        }
+
+        .fork-card:hover {
+            border-color: var(--nt-blue);
+            background: #252525;
+            transform: translateX(5px);
         }
 
         .color-tab {
@@ -100,7 +131,6 @@
         .tab-navy { background-color: var(--nt-navy); }
         .tab-orange { background-color: var(--nt-orange); }
         .tab-pink { background-color: var(--nt-pink); }
-        .tab-lightgreen { background-color: var(--nt-lightgreen); }
 
         .icon-box {
             width: 60px;
@@ -117,6 +147,17 @@
             font-weight: 900;
             letter-spacing: -1px;
         }
+
+        .section-label {
+            display: inline-block;
+            background: var(--nt-gray-dark);
+            color: white;
+            padding: 4px 12px;
+            font-weight: 900;
+            font-size: 14px;
+            transform: skewX(-10deg);
+            margin-bottom: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -130,122 +171,136 @@
         <div class="h-1.5 w-24 md:w-32 bg-gray-300 mx-auto mt-4 rounded-full"></div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 pb-24 mt-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            
-            <!-- 链接 1 -->
-            <a href="https://namedchengjie.github.io/f1/" target="_blank" class="game-card">
-                <div class="color-tab tab-red"></div>
-                <div class="icon-box bg-red-50">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                </div>
-                <h2 class="text-lg font-black mb-1">双扣座位分配</h2>
-                <span class="text-xs font-bold text-gray-400">电脑版</span>
-            </a>
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <!-- 自研项目区 -->
+        <div class="mb-16">
+            <div class="section-label">ORIGINAL WORKS</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- 链接 1 -->
+                <a href="https://namedchengjie.github.io/f1/" target="_blank" class="game-card">
+                    <div class="color-tab tab-red"></div>
+                    <div class="icon-box bg-red-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-lg font-black mb-1">双扣座位分配</h2>
+                    <span class="text-xs font-bold text-gray-400">电脑版</span>
+                </a>
 
-            <!-- 链接 2 -->
-            <a href="https://namedchengjie.github.io/f2/" target="_blank" class="game-card">
-                <div class="color-tab tab-blue"></div>
-                <div class="icon-box bg-blue-50">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                    </svg>
-                </div>
-                <h2 class="text-lg font-black mb-1">打字学习游戏</h2>
-                <span class="text-xs font-bold text-gray-400">小写字母</span>
-            </a>
+                <!-- 链接 2 -->
+                <a href="https://namedchengjie.github.io/f2/" target="_blank" class="game-card">
+                    <div class="color-tab tab-blue"></div>
+                    <div class="icon-box bg-blue-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <h2 class="text-lg font-black mb-1">打字学习游戏</h2>
+                    <span class="text-xs font-bold text-gray-400">小写字母</span>
+                </a>
 
-            <!-- 链接 3 -->
-            <a href="https://namedchengjie.github.io/f3/" target="_blank" class="game-card">
-                <div class="color-tab tab-yellow"></div>
-                <div class="icon-box bg-yellow-50">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
-                </div>
-                <h2 class="text-lg font-black mb-1">家庭座位分配</h2>
-                <span class="text-xs font-bold text-gray-400">4人版</span>
-            </a>
+                <!-- 链接 3 -->
+                <a href="https://namedchengjie.github.io/f3/" target="_blank" class="game-card">
+                    <div class="color-tab tab-yellow"></div>
+                    <div class="icon-box bg-yellow-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
+                    <h2 class="text-lg font-black mb-1">家庭座位分配</h2>
+                    <span class="text-xs font-bold text-gray-400">4人版</span>
+                </a>
 
-            <!-- 链接 4 -->
-            <a href="https://namedchengjie.github.io/f4" target="_blank" class="game-card">
-                <div class="color-tab tab-green"></div>
-                <div class="icon-box bg-green-50">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                </div>
-                <h2 class="text-lg font-black mb-1">贪吃蛇</h2>
-                <span class="text-xs font-bold text-gray-400">双人版</span>
-            </a>
+                <!-- 链接 4 -->
+                <a href="https://namedchengjie.github.io/f4" target="_blank" class="game-card">
+                    <div class="color-tab tab-green"></div>
+                    <div class="icon-box bg-green-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-lg font-black mb-1">贪吃蛇</h2>
+                    <span class="text-xs font-bold text-gray-400">双人版</span>
+                </a>
 
-            <!-- 链接 5 -->
-            <a href="https://s9cwvyumba.jiandaoyun.com/dash/698bcb85a5d0caaf14fb5b63" target="_blank" class="game-card">
-                <div class="color-tab tab-purple"></div>
-                <div class="icon-box bg-purple-50">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                </div>
-                <h2 class="text-lg font-black mb-1">积分榜</h2>
-                <span class="text-xs font-bold text-gray-400">在一起</span>
-            </a>
+                <!-- 链接 5 -->
+                <a href="https://s9cwvyumba.jiandaoyun.com/dash/698bcb85a5d0caaf14fb5b63" target="_blank" class="game-card">
+                    <div class="color-tab tab-purple"></div>
+                    <div class="icon-box bg-purple-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-lg font-black mb-1">积分榜</h2>
+                    <span class="text-xs font-bold text-gray-400">在一起</span>
+                </a>
 
-            <!-- 链接 6 -->
-            <a href="https://namedchengjie.github.io/f5" target="_blank" class="game-card">
-                <div class="color-tab tab-navy"></div>
-                <div class="icon-box bg-slate-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                </div>
-                <h2 class="text-lg font-black mb-1">贪吃蛇</h2>
-                <span class="text-xs font-bold text-gray-400">单人版</span>
-            </a>
+                <!-- 链接 6 -->
+                <a href="https://namedchengjie.github.io/f5" target="_blank" class="game-card">
+                    <div class="color-tab tab-navy"></div>
+                    <div class="icon-box bg-slate-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-lg font-black mb-1">贪吃蛇</h2>
+                    <span class="text-xs font-bold text-gray-400">单人版</span>
+                </a>
 
-            <!-- 链接 7 -->
-            <a href="https://namedchengjie.github.io/f6" target="_blank" class="game-card">
-                <div class="color-tab tab-orange"></div>
-                <div class="icon-box bg-orange-50">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-                    </svg>
-                </div>
-                <h2 class="text-lg font-black mb-1">打砖块</h2>
-                <span class="text-xs font-bold text-gray-400">怀旧小霸王</span>
-            </a>
+                <!-- 链接 7 -->
+                <a href="https://namedchengjie.github.io/f6" target="_blank" class="game-card">
+                    <div class="color-tab tab-orange"></div>
+                    <div class="icon-box bg-orange-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                        </svg>
+                    </div>
+                    <h2 class="text-lg font-black mb-1">打砖块</h2>
+                    <span class="text-xs font-bold text-gray-400">怀旧小霸王</span>
+                </a>
 
-            <!-- 链接 8 -->
-            <a href="https://namedchengjie.github.io/f7" target="_blank" class="game-card">
-                <div class="color-tab tab-pink"></div>
-                <div class="icon-box bg-pink-50">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-600" viewBox="0 0 24 24" fill="currentColor">
-                        <rect x="3" y="5" width="12" height="16" rx="1.5" fill="white" stroke="currentColor" stroke-width="1.5"/>
-                        <rect x="8" y="3" width="12" height="16" rx="1.5" fill="white" stroke="currentColor" stroke-width="1.5"/>
-                        <path d="M14 9.5c0-.8-.6-1.5-1.5-1.5s-1.5.7-1.5 1.5c0 1.5 3 3.5 3 3.5s3-2 3-3.5c0-.8-.6-1.5-1.5-1.5S14 8.7 14 9.5z" fill="#E60012"/>
-                    </svg>
-                </div>
-                <h2 class="text-lg font-black mb-1">24 点扑克牌</h2>
-                <span class="text-xs font-bold text-gray-400">双人计算</span>
-            </a>
+                <!-- 链接 8 -->
+                <a href="https://namedchengjie.github.io/f7" target="_blank" class="game-card">
+                    <div class="color-tab tab-pink"></div>
+                    <div class="icon-box bg-pink-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-600" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="3" y="5" width="12" height="16" rx="1.5" fill="white" stroke="currentColor" stroke-width="1.5"/>
+                            <rect x="8" y="3" width="12" height="16" rx="1.5" fill="white" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M14 9.5c0-.8-.6-1.5-1.5-1.5s-1.5.7-1.5 1.5c0 1.5 3 3.5 3 3.5s3-2 3-3.5c0-.8-.6-1.5-1.5-1.5S14 8.7 14 9.5z" fill="#E60012"/>
+                        </svg>
+                    </div>
+                    <h2 class="text-lg font-black mb-1">24 点扑克牌</h2>
+                    <span class="text-xs font-bold text-gray-400">双人计算</span>
+                </a>
+            </div>
+        </div>
 
-            <!-- 链接 9 -->
-            <a href="https://namedchengjie.github.io/fork2048/" target="_blank" class="game-card">
-                <div class="color-tab tab-lightgreen"></div>
-                <div class="icon-box bg-lime-50">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-lime-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <rect x="4" y="4" width="7" height="7" rx="1" stroke-width="2"/>
-                        <rect x="13" y="4" width="7" height="7" rx="1" stroke-width="2"/>
-                        <rect x="4" y="13" width="7" height="7" rx="1" stroke-width="2"/>
-                        <rect x="13" y="13" width="7" height="7" rx="1" stroke-width="2" fill="currentColor" fill-opacity="0.2"/>
-                    </svg>
-                </div>
-                <h2 class="text-lg font-black mb-1">2048游戏</h2>
-                <span class="text-xs font-bold text-gray-400">fork</span>
-            </a>
+        <!-- Fork 项目区 -->
+        <div>
+            <div class="section-label">FORKED REPOS</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                
+                <!-- Fork 链接: 2048 -->
+                <a href="https://namedchengjie.github.io/fork2048/" target="_blank" class="fork-card group">
+                    <div class="p-3 bg-gray-800 rounded-lg mr-4 group-hover:bg-blue-900 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-black leading-tight">2048 游戏</h2>
+                        <p class="text-xs text-gray-500 font-bold mt-1">Gabriele Cirulli</p>
+                    </div>
+                </a>
 
+                <!-- 预留未来 Fork 占位 -->
+                <div class="border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center p-6 opacity-40">
+                    <span class="text-sm font-bold text-gray-400">WAITING FOR NEXT FORK...</span>
+                </div>
+
+            </div>
         </div>
     </main>
 
