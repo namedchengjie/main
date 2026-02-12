@@ -20,6 +20,7 @@
             --nt-gray-light: #EFEFEF;
             --nt-white: #FFFFFF;
             --fork-bg: #1A1A1A;
+            --download-bg: #FFF9C4;
         }
 
         body {
@@ -49,7 +50,7 @@
             background-size: 30px 30px;
         }
 
-        /* 原有游戏卡带风格 */
+        /* 游戏卡带风格 */
         .game-card {
             background: var(--nt-white);
             border: 4px solid var(--nt-gray-dark);
@@ -79,7 +80,7 @@
             box-shadow: 0 2px 0 var(--nt-gray-dark);
         }
 
-        /* Fork 专用风格：深色、极简、科技感 */
+        /* Fork 专用风格 */
         .fork-card {
             background: var(--fork-bg);
             border: 2px solid #444;
@@ -111,6 +112,26 @@
             border-color: var(--nt-blue);
             background: #252525;
             transform: translateX(5px);
+        }
+
+        /* 下载专区风格 */
+        .download-card {
+            background: var(--nt-white);
+            border: 3px solid var(--nt-yellow);
+            border-radius: 50px; /* 胶囊形状 */
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--nt-gray-dark);
+            transition: all 0.2s ease;
+            box-shadow: 4px 4px 0 var(--nt-yellow);
+        }
+
+        .download-card:hover {
+            transform: scale(1.02);
+            background: var(--download-bg);
+            box-shadow: 2px 2px 0 var(--nt-yellow);
         }
 
         .color-tab {
@@ -173,11 +194,10 @@
 
     <main class="max-w-7xl mx-auto px-6 pb-24">
         
-        <!-- 自研项目区 -->
+        <!-- 自研项目区 (Original) -->
         <div class="mb-16">
             <div class="section-label">ORIGINAL WORKS</div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                <!-- 链接 1 -->
                 <a href="https://namedchengjie.github.io/f1/" target="_blank" class="game-card">
                     <div class="color-tab tab-red"></div>
                     <div class="icon-box bg-red-50">
@@ -189,7 +209,6 @@
                     <span class="text-xs font-bold text-gray-400">电脑版</span>
                 </a>
 
-                <!-- 链接 2 -->
                 <a href="https://namedchengjie.github.io/f2/" target="_blank" class="game-card">
                     <div class="color-tab tab-blue"></div>
                     <div class="icon-box bg-blue-50">
@@ -201,7 +220,6 @@
                     <span class="text-xs font-bold text-gray-400">小写字母</span>
                 </a>
 
-                <!-- 链接 3 -->
                 <a href="https://namedchengjie.github.io/f3/" target="_blank" class="game-card">
                     <div class="color-tab tab-yellow"></div>
                     <div class="icon-box bg-yellow-50">
@@ -213,7 +231,6 @@
                     <span class="text-xs font-bold text-gray-400">4人版</span>
                 </a>
 
-                <!-- 链接 4 -->
                 <a href="https://namedchengjie.github.io/f4" target="_blank" class="game-card">
                     <div class="color-tab tab-green"></div>
                     <div class="icon-box bg-green-50">
@@ -225,7 +242,6 @@
                     <span class="text-xs font-bold text-gray-400">双人版</span>
                 </a>
 
-                <!-- 链接 5 -->
                 <a href="https://s9cwvyumba.jiandaoyun.com/dash/698bcb85a5d0caaf14fb5b63" target="_blank" class="game-card">
                     <div class="color-tab tab-purple"></div>
                     <div class="icon-box bg-purple-50">
@@ -237,7 +253,6 @@
                     <span class="text-xs font-bold text-gray-400">在一起</span>
                 </a>
 
-                <!-- 链接 6 -->
                 <a href="https://namedchengjie.github.io/f5" target="_blank" class="game-card">
                     <div class="color-tab tab-navy"></div>
                     <div class="icon-box bg-slate-100">
@@ -249,7 +264,6 @@
                     <span class="text-xs font-bold text-gray-400">单人版</span>
                 </a>
 
-                <!-- 链接 7 -->
                 <a href="https://namedchengjie.github.io/f6" target="_blank" class="game-card">
                     <div class="color-tab tab-orange"></div>
                     <div class="icon-box bg-orange-50">
@@ -261,7 +275,6 @@
                     <span class="text-xs font-bold text-gray-400">怀旧小霸王</span>
                 </a>
 
-                <!-- 链接 8 -->
                 <a href="https://namedchengjie.github.io/f7" target="_blank" class="game-card">
                     <div class="color-tab tab-pink"></div>
                     <div class="icon-box bg-pink-50">
@@ -277,12 +290,10 @@
             </div>
         </div>
 
-        <!-- Fork 项目区 -->
-        <div>
+        <!-- Fork 项目区 (Forked) -->
+        <div class="mb-16">
             <div class="section-label">FORKED REPOS</div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                
-                <!-- Fork 链接: 2048 -->
                 <a href="https://namedchengjie.github.io/fork2048/" target="_blank" class="fork-card group">
                     <div class="p-3 bg-gray-800 rounded-lg mr-4 group-hover:bg-blue-900 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -294,10 +305,33 @@
                         <p class="text-xs text-gray-500 font-bold mt-1">Gabriele Cirulli</p>
                     </div>
                 </a>
-
-                <!-- 预留未来 Fork 占位 -->
                 <div class="border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center p-6 opacity-40">
                     <span class="text-sm font-bold text-gray-400">WAITING FOR NEXT FORK...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 下载专区 (Downloads) -->
+        <div>
+            <div class="section-label">DOWNLOADS</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 下载链接 1 -->
+                <a href="https://supertuxkart.net/" target="_blank" class="download-card group">
+                    <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center mr-4 group-hover:rotate-12 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="font-black text-gray-800">赛车游戏 1</h2>
+                        <p class="text-[10px] text-gray-400 font-bold uppercase">SuperTuxKart.net</p>
+                    </div>
+                </a>
+
+                <!-- 占位符 -->
+                <div class="border-2 border-dotted border-gray-200 rounded-full flex items-center px-8 py-4 opacity-30">
+                    <span class="text-xs font-bold text-gray-400">MORE RESOURCES SOON...</span>
                 </div>
 
             </div>
